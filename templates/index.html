@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FSA Reporting Form</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div id="loginContainer" class="container">
+        <form id="loginForm" method="post">
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" class="form-control" id="email" name="email" required pattern=".+@gmail\.com" title="Please enter a Gmail address.">
+                <button type="submit" class="btn btn-primary">Login</button>
+            </div>
+        </form>
+    </div>
+
+    <div id="formContainer" class="container hidden">
+        <form id="myForm" method="post">
+            <div class="form-group">
+                <label for="businessName">Name/Business Name:</label>
+                <input type="text" class="form-control" id="businessName" name="businessName" required>
+            </div>
+            <div class="form-group">
+                <label for="contactAddress">Contact Address:</label>
+                <textarea class="form-control" id="contactAddress" name="contactAddress" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="mobile">Mobile:</label>
+                <input type="tel" class="form-control" id="mobile" name="mobile" required>
+            </div>
+            <div class="form-group">
+                <label for="remark">Remark:</label>
+                <textarea class="form-control" id="remark" name="remark"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="businessType">Merchant Business Type:</label>
+                <select class="form-control" id="businessType" name="businessType" required>
+                    <option value="">Select</option>
+                    <option value="POS Agents">POS Agents</option>
+                    <option value="Neighborhood Provision Shops">Neighborhood Provision Shops</option>
+                    <option value="Small & Medium Supermarkets">Small & Medium Supermarkets</option>
+                    <option value="Bukateria or Mamaput">Bukateria or Mamaput</option>
+                    <option value="Fast-Food Outlets">Fast-Food Outlets</option>
+                    <option value="Church or other religious org">Church or other religious org</option>
+                    <option value="Schools">Schools</option>
+                    <option value="Hotels">Hotels</option>
+                    <option value="Fashion Stores/Boutiques/Salons">Fashion Stores/Boutiques/Salons</option>
+                    <option value="Spare Parts dealer">Spare Parts dealer</option>
+                    <option value="Home Electronics Dealers">Home Electronics Dealers</option>
+                    <option value="Computer & Mobile Phone Shops">Computer & Mobile Phone Shops</option>
+                    <option value="Online products & services owners">Online products & services owners</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="agreeEnroll">Did the Merchant Agree to Enroll?</label>
+                <select class="form-control" id="agreeEnroll" name="agreeEnroll" required>
+                    <option value="">Select</option>
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="virtualAccount">Merchant Virtual Account Number Created:</label>
+                <input type="text" class="form-control" id="virtualAccount" name="virtualAccount" required>
+            </div>
+            <div class="form-group">
+                <label for="merchantBusinessName">Merchant Business Name:</label>
+                <input type="text" class="form-control" id="merchantBusinessName" name="merchantBusinessName" required>
+            </div>
+            <div class="form-group">
+                <label for="dateCreated">Date Created:</label>
+                <input type="date" class="form-control" id="dateCreated" name="dateCreated" required>
+            </div>
+            <!-- Hidden fields for geolocation data and timestamp -->
+            <input type="hidden" id="latitude" name="latitude">
+            <input type="hidden" id="longitude" name="longitude">
+            <input type="hidden" id="timestamp" name="timestamp">
+            <button type="submit" class="btn btn-success">Submit</button>
+        </form>
+    </div>
+    
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
